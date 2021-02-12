@@ -16,6 +16,10 @@ install:
 script:
   - cd decide
   - python ./manage.py test voting --keepdb
+notifications:
+ email:  
+    on_success: never
+    on_failure: always
 deploy:
    provider: heroku
    app: examen-febrero-fercaldur

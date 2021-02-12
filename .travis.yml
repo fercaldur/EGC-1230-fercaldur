@@ -16,3 +16,10 @@ install:
 script:
   - cd decide
   - python ./manage.py test voting --keepdb
+deploy:
+   provider: heroku
+   app: examen-febrero-fercaldur
+   strategy: git
+   api_key: $HEROKU_AUTH_TOKEN
+   on:
+     branch: master
